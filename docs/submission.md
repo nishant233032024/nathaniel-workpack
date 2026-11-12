@@ -25,7 +25,7 @@ The 2:00 am target is ours. Do not describe it as school-approved.
 | Skill (Track D) with CLI + outputs | Done, deterministic |
 | Docs: requirements, decisions, reference, AI use, demos | Done |
 | Shruti architecture + draw.io + SVG | Done |
-| **GitHub repo pushed** | **Not done — needs your account + approval** |
+| **GitHub repo pushed** | **Done:** https://github.com/nishant233032024/nathaniel-workpack (public) |
 | **Live deployment** | **Done:** https://nathaniel-workpack.vercel.app — Dhun and the fees desk, both working |
 | **Postgres backend configured** | **Done:** Neon free plan via the Vercel integration; 25 students + 40 payments imported |
 | **Four videos** | **Not done — only you can record them** |
@@ -47,7 +47,7 @@ The 2:00 am target is ours. Do not describe it as school-approved.
    ```
 3. **Record four videos** using `docs/demos/video-scripts.md`. Different AI
    mistake in each, all of them real.
-4. **Deploy and push** (below).
+4. **Check both links** open: the live site and the public repo (below).
 5. **Submit** and WhatsApp the school.
 
 ## Deploy checklist
@@ -83,7 +83,7 @@ The data here is fictional, but the pattern is the one that would leak.
 Say it plainly, in this order:
 
 1. What works and what you showed.
-2. What is not pushed yet (the public GitHub repo), and why.
+2. What is not finished yet (the videos, the form), and why.
 3. Exactly what you would do next — the four steps in the deploy checklist.
 
 The brief explicitly says a clear plan beats a broken demo.

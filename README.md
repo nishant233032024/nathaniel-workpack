@@ -79,7 +79,9 @@ not connected" notice instead of failing with a 500.
 
 Locally nothing changes: with no `DATABASE_URL`, the app uses `data/fees.db`.
 
-**Not pushed to GitHub yet.**
+**Source:** <https://github.com/nishant233032024/nathaniel-workpack> — public,
+with the full history of how it was built. There is no LICENSE file yet: it is
+readable for review, not licensed for reuse.
 
 ## Part 1 — Dhun
 
@@ -224,7 +226,7 @@ instead of letting the source app keep playing.
 
 ## Honest limitations
 
-- The site is deployed to Vercel; the repository is still not pushed to GitHub.
+- The site is deployed to Vercel and the code is public on GitHub.
 - The deployed fees desk runs on Neon's free plan, which suspends idle compute;
   the first request after a quiet period may take an extra second while it wakes.
   SQLite remains the local backend.

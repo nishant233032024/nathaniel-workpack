@@ -23,9 +23,9 @@ read. This file is a plan of shots, not a teleprompter.
 5. Say the date, your name, and which part it is in the first sentence. It makes
    the four videos easy to order later.
 
-**One precondition for submission (not for recording):** the brief asks for a
-public GitHub repo. It is **not pushed yet**. Push before you send the form, and
-if you record first, do not claim a repo link you have not created.
+**Public repo:** <https://github.com/nishant233032024/nathaniel-workpack>. It is
+live, so say it on camera if you want the link to carry weight — just check it
+opens on the day you record.
 
 ---
 
@@ -321,4 +321,4 @@ in `docs/ai-use.md`.
 
 **Never claim:** a deadline extension (the page says about 4–5 days and shows no
 expired deadline), that all four tracks were attempted (this is Track D), that the
-Mac app exists, or a GitHub link you have not pushed.
+Mac app exists, or a link you have not opened on the day.

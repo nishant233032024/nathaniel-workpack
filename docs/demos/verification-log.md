@@ -253,8 +253,11 @@ Fixes made in this pass. Each was a real defect, not polish:
    `submission.md` corrected, including the old "replace store.ts by hand"
    instructions, which no longer describe what was built.
 
-Still not done, and still not claimed anywhere: the **GitHub push**, the **four
-videos**, and the **submission form**.
+The repo was pushed the same evening: **https://github.com/nishant233032024/nathaniel-workpack**
+— public, 67 files, `main`, with `.env`, the SQLite file, `.vercel/` and
+`node_modules/` all excluded and `.env.example` included.
+
+Still not done: the **four videos** and the **submission form**.
 
 ## 8. What was not verified
 

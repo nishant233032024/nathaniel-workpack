@@ -76,7 +76,8 @@ The agent cannot do these, and claiming otherwise would be dishonest:
 1. Read `docs/decisions/0001-finance-rules.md` and be able to defend each choice.
 2. Run `npm run verify` and watch the numbers.
 3. Record the four videos in your own voice, including the mistakes above.
-4. Push to GitHub — the deploy is done (Vercel, with a Neon Postgres database), the repo is not.
+4. Confirm both links open: the live site (Vercel, with a Neon Postgres database)
+   and the public repo. Both are done; a dead link on the day is still your call.
 5. Delete nothing from `docs/`; the reviewer reads it.
 
 ## Standing rules the agent worked under

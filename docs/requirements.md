@@ -18,7 +18,7 @@ Source: <https://brochures.nathanielschool.com/join/engineer>, read on 11 Novemb
 | Requirement | Status here |
 | --- | --- |
 | Use any AI tool; in each video say which tool, what it did well, and one thing it got wrong that you caught | Scripted in `docs/demos/video-scripts.md`; the specific mistakes are in `docs/ai-use.md` |
-| Everything must run; web work live; code in a public GitHub repo with a short README | **Live** at <https://nathaniel-workpack.vercel.app>; repo **not pushed yet** |
+| Everything must run; web work live; code in a public GitHub repo with a short README | **Live** at <https://nathaniel-workpack.vercel.app>; code public at <https://github.com/nishant233032024/nathaniel-workpack> |
 | If you cannot finish a part, send what works and explain what you would do next | Applies to deployment tonight |
 | Videos 5–10 minutes, natural voice; a silent screen recording does not count | Four scripts written |
 | Submission needs: video or voice note per part, plus a link | Checklist in `docs/submission.md` |
@@ -43,7 +43,7 @@ Source: <https://brochures.nathanielschool.com/join/engineer>, read on 11 Novemb
 | 1.3 | Any of the 12 keys; numbers and swaras stay; note names change and are spelled correctly (F# in G, never Gb) | Done and tested across all twelve keys |
 | 1.4 | Three tunes from Dhun's shelf in a data format of my design; a fourth is one line | Done; test adds a fourth |
 | 1.5 | Write your own code; do not copy their files | Own data model, renderer and synthesiser; melodies are public-domain transcriptions |
-| 1.6 | Put it live and on GitHub | **Live on Vercel**; GitHub push still outstanding |
+| 1.6 | Put it live and on GitHub | **Live on Vercel**, repo public |
 | 1.7 | House rules: plain note names (C, F#, Bb, never C4); default key G | Enforced by test; default is G |
 | 1.8 | Video: Dhun and clone side by side, where they differ, how a tune is stored, how spelling is worked out, how you clone an app whose code you cannot see | Script 1 |
 
