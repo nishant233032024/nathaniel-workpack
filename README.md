@@ -20,6 +20,22 @@ assignment (November 2026).
 Everything is one Next.js application plus one Node CLI. There is exactly one
 implementation of the money rules, and the portal and the skill both call it.
 
+## What it looks like
+
+Both images are the live deployment, not a mockup.
+
+**Dhun, rebuilt** — `/dhun/twinkle` in the default key of G. Numbers and swaras hold
+their place in every cell, note names are derived from the key (`F♯` in G, never
+`Gb`), and no note name carries an octave digit.
+
+![Dhun tune page](docs/screenshots/dhun-twinkle.png)
+
+**The fees desk** — `/fees`, reading Postgres. Six headline figures, the October
+receipts with PayPal fees and GST separated, and the derived balances for all 25
+students.
+
+![Fees desk](docs/screenshots/fees-desk.png)
+
 ## Quick start
 
 ```bash
