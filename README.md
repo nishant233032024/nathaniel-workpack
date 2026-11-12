@@ -80,8 +80,9 @@ not connected" notice instead of failing with a 500.
 Locally nothing changes: with no `DATABASE_URL`, the app uses `data/fees.db`.
 
 **Source:** <https://github.com/nishant233032024/nathaniel-workpack> — public,
-with the full history of how it was built. There is no LICENSE file yet: it is
-readable for review, not licensed for reuse.
+with the full history of how it was built. The code is **MIT licensed** (see
+[`LICENSE`](LICENSE)); the two supplied CSVs remain the assignment's own exercise
+data, and the three melodies are public domain.
 
 ## Part 1 — Dhun
 
