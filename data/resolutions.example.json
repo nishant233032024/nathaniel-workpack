@@ -1,0 +1,18 @@
+[
+  {
+    "paymentId": "P5016",
+    "action": "assign",
+    "studentId": "S110",
+    "allowCrossCurrency": false,
+    "note": "Confirmed by phone: Tara paid the balance from a second email address.",
+    "decidedBy": "admin@desk",
+    "decidedAt": "2026-10-31T10:15:00Z"
+  },
+  {
+    "paymentId": "P5039",
+    "action": "unallocated",
+    "note": "Cash at the desk, no student identified yet.",
+    "decidedBy": "admin@desk",
+    "decidedAt": "2026-10-31T10:20:00Z"
+  }
+]

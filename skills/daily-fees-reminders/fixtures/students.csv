@@ -1,0 +1,5 @@
+student_id,name,email,country,course,start_date,plan,currency,course_fee
+S1,Aarav Menon,aarav@example.com,India,Foundation Piano,2026-08-01,instalments (3),INR,24000
+S2,Diya Fernandes,diya@example.com,India,Music Theory,2026-08-22,instalments (3),INR,15000
+S3,Tara Pillai,tara.pillai@example.com,India,Music Method Guitar,2026-08-08,instalments (3),INR,30000
+S4,Priya Paul,priya@example.com,USA,Music Method Guitar,2026-08-08,full,USD,375

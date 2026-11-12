@@ -1,0 +1,26 @@
+student_id,name,email,country,course,start_date,plan,currency,course_fee
+S101,Aarav Menon,aarav.menon@example.com,India,Foundation Piano,2026-08-01,instalments (3),INR,24000
+S102,Meera Kapoor,meera.kapoor@example.com,India,Music Method Guitar,2026-08-08,full,INR,30000
+S103,Kabir Iyer,kabir.iyer@example.com,India,Western Vocals,2026-08-15,full,INR,27000
+S104,Diya Fernandes,diya.fernandes@example.com,India,Music Theory,2026-08-22,instalments (3),INR,15000
+S105,Rohan Shah,rohan.shah@example.com,India,Foundation Piano,2026-08-29,full,INR,24000
+S106,Sara Bose,sara.bose@example.com,India,Music Method Guitar,2026-09-05,full,INR,30000
+S107,Vikram Nair,vikram.nair@example.com,India,Western Vocals,2026-09-12,instalments (3),INR,27000
+S108,Isha Thomas,isha.thomas@example.com,India,Music Theory,2026-09-19,full,INR,15000
+S109,Neel Rao,neel.rao@example.com,India,Foundation Piano,2026-08-01,full,INR,24000
+S110,Tara Pillai,tara.pillai@example.com,India,Music Method Guitar,2026-08-08,instalments (3),INR,30000
+S111,Arjun Das,arjun.das@example.com,India,Western Vocals,2026-08-15,full,INR,27000
+S112,Leah Mathew,leah.mathew@example.com,India,Music Theory,2026-08-22,full,INR,15000
+S113,Dev Joshi,dev.joshi@example.com,India,Foundation Piano,2026-08-29,instalments (3),INR,24000
+S114,Nina Khan,nina.khan@example.com,India,Music Method Guitar,2026-09-05,full,INR,30000
+S115,Kiran Varghese,kiran.varghese@example.com,India,Western Vocals,2026-09-12,full,INR,27000
+S116,Maya Reddy,maya.reddy@example.com,USA,Music Theory,2026-09-19,instalments (3),USD,190
+S117,Omar Sethi,omar.sethi@example.com,USA,Foundation Piano,2026-08-01,full,USD,300
+S118,Priya Paul,priya.paul@example.com,USA,Music Method Guitar,2026-08-08,full,USD,375
+S119,Sam Chandra,sam.chandra@example.com,USA,Western Vocals,2026-08-15,instalments (3),USD,330
+S120,Zoe Gill,zoe.gill@example.com,Germany,Music Theory,2026-08-22,full,EUR,175
+S121,Ravi Kumar,ravi.kumar@example.com,Germany,Foundation Piano,2026-08-29,full,EUR,280
+S122,Anika Dsouza,anika.dsouza@example.com,Germany,Music Method Guitar,2026-09-05,instalments (3),EUR,350
+S123,Tom Wilson,tom.wilson@example.com,UAE,Western Vocals,2026-09-12,full,USD,330
+S124,Lina Hegde,lina.hegde@example.com,UAE,Music Theory,2026-09-19,full,USD,190
+S125,Yash Singh,yash.singh@example.com,India,Foundation Piano,2026-08-01,instalments (3),INR,24000

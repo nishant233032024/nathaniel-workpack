@@ -1,0 +1,11 @@
+node_modules
+.next
+.next-export
+out
+data/fees.db
+data/fees.db-wal
+data/fees.db-shm
+skills/daily-fees-reminders/out
+dev.log
+*.tsbuildinfo
+.git

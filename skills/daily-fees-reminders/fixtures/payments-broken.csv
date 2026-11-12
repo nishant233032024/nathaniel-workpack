@@ -1,0 +1,3 @@
+payment_id,date,payer_name,payer_email,currency,amount,method,reference,note
+P1,2026-07-29,Aarav Menon,aarav@example.com,INR,8000,UPI,UPI100001,
+P2,2026-08-28,Aarav Menon,aarav@example.com,INR,eight thousand,UPI,UPI100002,

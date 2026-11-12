@@ -1,0 +1,94 @@
+<mxfile host="app.diagrams.net" type="device" version="24.7.17">
+  <diagram id="shruti-flow" name="Shruti audio flow">
+    <mxGraphModel dx="1400" dy="900" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1400" pageHeight="950" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <mxCell id="title" value="Shruti — audio flow and process boundaries (macOS 14.2+)" style="text;html=1;fontSize=22;fontStyle=1;align=left;verticalAlign=middle;" vertex="1" parent="1">
+          <mxGeometry x="40" y="20" width="760" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="subtitle" value="No virtual audio driver. The tap mutes the source, so there is nothing to double." style="text;html=1;fontSize=13;align=left;fontColor=#6C6153;" vertex="1" parent="1">
+          <mxGeometry x="40" y="58" width="820" height="24" as="geometry" />
+        </mxCell>
+
+        <mxCell id="laneA" value="AUDIO PATH" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#9A8C77;align=left;" vertex="1" parent="1">
+          <mxGeometry x="40" y="100" width="200" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="laneB" value="CONTROL PLANE" style="text;html=1;fontSize=11;fontStyle=1;fontColor=#9A8C77;align=left;" vertex="1" parent="1">
+          <mxGeometry x="640" y="100" width="200" height="20" as="geometry" />
+        </mxCell>
+
+        <mxCell id="app" value="Source app&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;Safari · Spotify · Logic&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="130" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="tap" value="Process tap&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;AudioHardwareCreateProcessTap&lt;br&gt;CATapDescription · muteBehavior = .muted&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7E5DA;strokeColor=#B05233;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="260" width="300" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="aggregate" value="HAL aggregate device&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;the tap is an input stream&lt;br&gt;owned by the app, rebuilt on device change&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="406" width="300" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="engine" value="Audio engine — real time&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;per-app gain → EQ → limiter (Audio Units)&lt;br&gt;no locks, no allocation, no Obj-C, no I/O&lt;br&gt;one mix bus, ~2.7 ms at 128 frames&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="542" width="300" height="96" as="geometry" />
+        </mxCell>
+        <mxCell id="output" value="Output audio unit&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;chosen interface, or the system default&lt;br&gt;reopened when the device changes&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="688" width="300" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="speakers" value="Speakers / headphones / interface&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;the only audible path while controlled&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#E3EFE9;strokeColor=#2E6A56;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="40" y="818" width="300" height="70" as="geometry" />
+        </mxCell>
+
+        <mxCell id="e1" value="Core Audio render" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;" edge="1" parent="1" source="app" target="tap">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e2" value="as input stream" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;" edge="1" parent="1" source="tap" target="aggregate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e3" value="IOProc" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;" edge="1" parent="1" source="aggregate" target="engine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e4" value="processed PCM" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;" edge="1" parent="1" source="engine" target="output">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="e5" value="to device" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;" edge="1" parent="1" source="output" target="speakers">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <mxCell id="menubar" value="Menu-bar app (SwiftUI)&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;MenuBarExtra · per-app rows · presets&lt;br&gt;device picker · test-tone onboarding&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="130" width="340" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="settings" value="Settings store&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;UserDefaults + versioned JSON export&lt;br&gt;bundleID → gain, EQ, mute, routing&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4ECDD;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="252" width="340" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="permission" value="Permission&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;NSAudioCaptureUsageDescription&lt;br&gt;prompted on first aggregate start · no Screen Recording&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="374" width="340" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="watchdog" value="XPC watchdog&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;if the app dies, un-mute every tapped app&lt;br&gt;a crash must never leave the Mac silent&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F7E5DA;strokeColor=#B05233;strokeWidth=2;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="496" width="340" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="listener" value="Device listener&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;AudioObjectAddPropertyListenerBlock&lt;br&gt;unplug → rebuild aggregate → reopen output&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFDF8;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="618" width="340" height="86" as="geometry" />
+        </mxCell>
+        <mxCell id="launch" value="Launch agent&lt;br&gt;&lt;font style=&quot;font-size:11px&quot;&gt;SMAppService.mainApp · start at login&lt;br&gt;restore last mix, never mute before ready&lt;/font&gt;" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#F4ECDD;strokeColor=#D6C6AB;fontStyle=1;fontSize=15;" vertex="1" parent="1">
+          <mxGeometry x="640" y="740" width="340" height="86" as="geometry" />
+        </mxCell>
+
+        <mxCell id="c1" value="sets gain / EQ" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;exitX=0;exitY=0.5;entryX=1;entryY=0.5;" edge="1" parent="1" source="menubar" target="engine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" value="persists" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;dashed=1;" edge="1" parent="1" source="menubar" target="settings">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" value="authorises the tap" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#B05233;fontSize=10;fontColor=#6C6153;dashed=1;" edge="1" parent="1" source="permission" target="tap">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c4" value="un-mute on crash" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#B05233;fontSize=10;fontColor=#6C6153;dashed=1;" edge="1" parent="1" source="watchdog" target="engine">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="c5" value="rebuild on change" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;endArrow=block;strokeColor=#6C6153;fontSize=10;fontColor=#6C6153;" edge="1" parent="1" source="listener" target="aggregate">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

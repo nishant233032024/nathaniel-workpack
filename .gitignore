@@ -1,0 +1,24 @@
+node_modules/
+.next/
+out/
+dist/
+*.tsbuildinfo
+next-env.d.ts
+dev.log
+
+# Vercel links this folder to a project locally; the deployment is the artefact
+.vercel/
+
+# Local database and generated evidence
+data/fees.db
+data/fees.db-wal
+data/fees.db-shm
+data/generated/
+
+# Skill run artefacts (regenerate with the command in SKILL.md)
+skills/daily-fees-reminders/out/
+
+# Secrets: never commit real values, but do commit the template
+.env
+.env.*
+!.env.example

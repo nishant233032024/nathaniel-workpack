@@ -1,0 +1,41 @@
+payment_id,date,payer_name,payer_email,currency,amount,method,reference,note
+P5001,2026-07-29,Aarav Menon,aarav.menon@example.com,INR,8000,UPI,UPI439563,instalment 1 of 3
+P5013,2026-07-29,Neel Rao,neel.rao@example.com,INR,24000,UPI,UPI632084,
+P5024,2026-07-29,Omar Sethi,omar.sethi@example.com,USD,300,PayPal,PAY161981,
+P5033,2026-07-29,Yash Singh,yash.singh@example.com,INR,8000,UPI,UPI705136,instalment 1 of 3
+P5004,2026-08-05,Meera Kapoor,meera.kapoor@example.com,INR,30000,UPI,UPI782554,
+P5014,2026-08-05,Tara Pillai,tara.pillai@example.com,INR,10000,UPI,UPI325127,instalment 1 of 3
+P5005,2026-08-12,Kabir Iyer,kabir.iyer@example.com,INR,27000,UPI,UPI150631,
+P5015,2026-08-12,Arjun Das,arjun.das@example.com,INR,27000,UPI,UPI139317,
+P5025,2026-08-12,Sam Chandra,sam.chandra@example.com,USD,110,PayPal,PAY967017,instalment 1 of 3
+P5006,2026-08-19,Diya Fernandes,diya.fernandes@example.com,INR,5000,UPI,UPI175954,instalment 1 of 3
+P5016,2026-08-19,Tara P.,tarap.music@example.com,INR,15000,UPI,PAY190122,
+P5028,2026-08-19,Zoe Gill,zoe.gill@example.com,EUR,175,PayPal,PAY334083,
+P5017,2026-08-26,Dev Joshi,dev.joshi@example.com,INR,8000,UPI,UPI554710,instalment 1 of 3
+P5029,2026-08-26,Ravi Kumar,ravi.kumar@example.com,EUR,280,PayPal,PAY761259,
+P5002,2026-08-28,Aarav Menon,aarav.menon@example.com,INR,8000,UPI,UPI258176,instalment 2 of 3
+P5034,2026-08-28,Yash Singh,yash.singh@example.com,INR,8000,UPI,UPI713984,instalment 2 of 3
+P5008,2026-09-02,Sara Bose,sara.bose@example.com,INR,30000,UPI,UPI661913,
+P5020,2026-09-02,Nina Khan,nina.khan@example.com,INR,30000,UPI,UPI352353,
+P5030,2026-09-02,Anika Dsouza,anika.dsouza@example.com,EUR,117,PayPal,PAY757911,instalment 1 of 3
+P5039,2026-09-02,Ravi Kumar,ravi.kumar@example.com,INR,5000,Cash,,paid at front desk
+P5040,2026-09-05,Omar Sethi,omar.sethi@example.com,INR,330,PayPal,PAY148845,
+P5009,2026-09-09,Vikram Nair,vikram.nair@example.com,INR,9000,UPI,UPI198702,instalment 1 of 3
+P5021,2026-09-09,Kiran Varghese,kiran.varghese@example.com,INR,27000,UPI,UPI195119,
+P5031,2026-09-09,Tom Wilson,tom.wilson@example.com,USD,330,PayPal,PAY711316,
+P5026,2026-09-11,Sam Chandra,sam.chandra@example.com,USD,110,PayPal,PAY692921,instalment 2 of 3
+P5038,2026-09-12,Aarav Menon,aarav.menon@example.com,INR,8000,UPI,UPI331821,no name on payment
+P5012,2026-09-16,Isha Thomas,isha.thomas@example.com,INR,10000,UPI,UPI160816,"short payment, says rest next week"
+P5022,2026-09-16,Maya Reddy,maya.reddy@example.com,USD,63,PayPal,PAY677814,instalment 1 of 3
+P5032,2026-09-16,Lina Hegde,lina.hegde@example.com,USD,190,PayPal,PAY164867,
+P5007,2026-09-18,Diya Fernandes,diya.fernandes@example.com,INR,5000,UPI,UPI961168,instalment 2 of 3
+P5036,2026-09-18,Diya Fernandes,diya.fernandes@example.com,INR,5000,UPI,UPI961168,
+P5037,2026-09-20,Nina Khan,nina.khan@example.com,INR,-15000,Bank transfer,RFND1812,refund: moved to a later batch
+P5018,2026-09-25,Dev Joshi,dev.joshi@example.com,INR,8000,UPI,UPI538485,instalment 2 of 3
+P5003,2026-09-27,Aarav Menon,aarav.menon@example.com,INR,8000,UPI,UPI514002,instalment 3 of 3
+P5035,2026-09-27,Yash Singh,yash.singh@example.com,INR,8000,UPI,UPI515949,instalment 3 of 3
+P5010,2026-10-09,Vikram Nair,vikram.nair@example.com,INR,9000,UPI,UPI483452,instalment 2 of 3
+P5027,2026-10-11,Sam Chandra,sam.chandra@example.com,USD,110,PayPal,PAY229815,instalment 3 of 3
+P5023,2026-10-16,Maya Reddy,maya.reddy@example.com,USD,63,PayPal,PAY545140,instalment 2 of 3
+P5019,2026-10-25,Dev Joshi,dev.joshi@example.com,INR,8000,UPI,UPI173248,instalment 3 of 3
+P5011,2026-11-08,Vikram Nair,vikram.nair@example.com,INR,9000,UPI,UPI711097,instalment 3 of 3

@@ -1,0 +1,10 @@
+payment_id,date,payer_name,payer_email,currency,amount,method,reference,note
+P1,2026-07-29,Aarav Menon,aarav@example.com,INR,8000,UPI,UPI100001,instalment 1 of 3
+P2,2026-08-28,Aarav Menon,aarav@example.com,INR,8000,UPI,UPI100002,instalment 2 of 3
+P3,2026-09-27,Aarav Menon,aarav@example.com,INR,8000,UPI,UPI100003,instalment 3 of 3
+P4,2026-08-19,Diya Fernandes,diya@example.com,INR,5000,UPI,UPI100004,instalment 1 of 3
+P5,2026-09-18,Diya Fernandes,diya@example.com,INR,5000,UPI,UPI100005,instalment 2 of 3
+P6,2026-09-18,Diya Fernandes,diya@example.com,INR,5000,UPI,UPI100005,
+P7,2026-08-05,Tara Pillai,tara.pillai@example.com,INR,10000,UPI,UPI100007,instalment 1 of 3
+P8,2026-08-19,Tara P.,tarap.music@example.com,INR,15000,UPI,PAY100008,
+P9,2026-11-08,Tara Pillai,tara.pillai@example.com,INR,5000,UPI,UPI100009,early

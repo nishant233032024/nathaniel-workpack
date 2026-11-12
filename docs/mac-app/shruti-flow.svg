@@ -1,0 +1,129 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="900" viewBox="0 0 1200 900" role="img" aria-labelledby="title desc">
+  <title id="title">Shruti — audio flow and process boundaries</title>
+  <desc id="desc">A source app's audio is captured by a Core Audio process tap, which mutes the original output. The tap feeds a HAL aggregate device, then a real-time audio engine applies per-app gain and EQ, then an output audio unit writes to the chosen device. A SwiftUI menu-bar app controls the engine; a settings store, permission prompt, XPC watchdog and device listener surround it.</desc>
+
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#6C6153" />
+    </marker>
+    <marker id="arrowAccent" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#B05233" />
+    </marker>
+    <style>
+      .bg { fill: #FBF7EF; }
+      .node { fill: #FFFDF8; stroke: #D6C6AB; stroke-width: 1.5; rx: 12; }
+      .node-accent { fill: #F7E5DA; stroke: #B05233; stroke-width: 2; rx: 12; }
+      .node-out { fill: #E3EFE9; stroke: #2E6A56; stroke-width: 2; rx: 12; }
+      .node-flat { fill: #F4ECDD; stroke: #D6C6AB; stroke-width: 1.5; rx: 12; }
+      .h { font-family: Inter, system-ui, sans-serif; font-size: 15px; font-weight: 700; fill: #211C17; }
+      .t { font-family: Inter, system-ui, sans-serif; font-size: 12px; fill: #6C6153; }
+      .tag { font-family: ui-monospace, Menlo, monospace; font-size: 11px; fill: #B05233; }
+      .lane { font-family: Inter, system-ui, sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 1.6px; fill: #9A8C77; }
+      .edge { stroke: #6C6153; stroke-width: 1.6; fill: none; marker-end: url(#arrow); }
+      .edge-accent { stroke: #B05233; stroke-width: 1.6; fill: none; marker-end: url(#arrowAccent); stroke-dasharray: 5 4; }
+      .elabel { font-family: Inter, system-ui, sans-serif; font-size: 10.5px; fill: #6C6153; }
+      .title { font-family: 'Caveat', cursive; font-size: 34px; font-weight: 700; fill: #211C17; }
+      .sub { font-family: Inter, system-ui, sans-serif; font-size: 12px; fill: #6C6153; }
+    </style>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1200" height="900" />
+  <text class="title" x="48" y="54">Shruti — where the sound goes, and what runs where</text>
+  <text class="sub" x="48" y="76">Per-app audio control on macOS 14.2+. No virtual audio driver. The tap mutes the source, so there is nothing to double.</text>
+
+  <text class="lane" x="60" y="118">AUDIO PATH</text>
+  <text class="lane" x="800" y="118">CONTROL PLANE</text>
+
+  <!-- audio path -->
+  <rect class="node" x="48" y="136" width="300" height="76" />
+  <text class="h" x="66" y="164">Source app</text>
+  <text class="t" x="66" y="184">Safari · Spotify · Logic</text>
+  <text class="t" x="66" y="200">a Core Audio client process</text>
+
+  <rect class="node-accent" x="48" y="258" width="300" height="92" />
+  <text class="h" x="66" y="286">Process tap</text>
+  <text class="tag" x="66" y="304">AudioHardwareCreateProcessTap</text>
+  <text class="t" x="66" y="322">CATapDescription · processes: [AudioObjectID]</text>
+  <text class="t" x="66" y="338">muteBehavior = .muted  → original output stops</text>
+
+  <rect class="node" x="48" y="396" width="300" height="80" />
+  <text class="h" x="66" y="424">HAL aggregate device</text>
+  <text class="t" x="66" y="444">the tap appears as an input stream</text>
+  <text class="t" x="66" y="460">owned by the app, rebuilt on device change</text>
+
+  <rect class="node" x="48" y="522" width="300" height="92" />
+  <text class="h" x="66" y="550">Audio engine — real time</text>
+  <text class="t" x="66" y="570">per-app gain → EQ → limiter (Audio Units)</text>
+  <text class="t" x="66" y="586">no locks, no allocation, no Obj-C, no I/O</text>
+  <text class="t" x="66" y="602">one mix bus, ~2.7 ms at 128 frames</text>
+
+  <rect class="node" x="48" y="660" width="300" height="76" />
+  <text class="h" x="66" y="688">Output audio unit</text>
+  <text class="t" x="66" y="708">chosen interface, or the system default</text>
+  <text class="t" x="66" y="724">reopened when the device changes</text>
+
+  <rect class="node-out" x="48" y="782" width="300" height="72" />
+  <text class="h" x="66" y="810">Speakers / headphones / interface</text>
+  <text class="t" x="66" y="830">the only path to the ears while controlled</text>
+
+  <!-- audio arrows -->
+  <path class="edge" d="M 198 212 L 198 256" />
+  <text class="elabel" x="206" y="238">Core Audio render</text>
+  <path class="edge" d="M 198 350 L 198 394" />
+  <text class="elabel" x="206" y="376">as input stream</text>
+  <path class="edge" d="M 198 476 L 198 520" />
+  <text class="elabel" x="206" y="502">IOProc</text>
+  <path class="edge" d="M 198 614 L 198 658" />
+  <text class="elabel" x="206" y="640">processed PCM</text>
+  <path class="edge" d="M 198 736 L 198 780" />
+  <text class="elabel" x="206" y="762">to device</text>
+
+  <!-- control plane -->
+  <rect class="node" x="780" y="136" width="360" height="86" />
+  <text class="h" x="798" y="164">Menu-bar app (SwiftUI)</text>
+  <text class="t" x="798" y="184">MenuBarExtra · per-app rows · presets</text>
+  <text class="t" x="798" y="200">device picker · "test tone" onboarding</text>
+
+  <rect class="node-flat" x="780" y="252" width="360" height="82" />
+  <text class="h" x="798" y="280">Settings store</text>
+  <text class="t" x="798" y="300">UserDefaults + versioned JSON export</text>
+  <text class="t" x="798" y="316">bundleID → gain, EQ, mute, routing</text>
+
+  <rect class="node" x="780" y="364" width="360" height="86" />
+  <text class="h" x="798" y="392">Permission</text>
+  <text class="t" x="798" y="412">NSAudioCaptureUsageDescription</text>
+  <text class="t" x="798" y="428">prompted on first aggregate start · no Screen Recording</text>
+
+  <rect class="node-accent" x="780" y="480" width="360" height="86" />
+  <text class="h" x="798" y="508">XPC watchdog</text>
+  <text class="t" x="798" y="528">if the app dies, un-mute every tapped app</text>
+  <text class="t" x="798" y="544">a crash must never leave the Mac silent</text>
+
+  <rect class="node" x="780" y="596" width="360" height="86" />
+  <text class="h" x="798" y="624">Device listener</text>
+  <text class="t" x="798" y="644">AudioObjectAddPropertyListenerBlock</text>
+  <text class="t" x="798" y="660">unplug → rebuild aggregate → reopen output</text>
+
+  <rect class="node-flat" x="780" y="712" width="360" height="86" />
+  <text class="h" x="798" y="740">Launch agent</text>
+  <text class="t" x="798" y="760">SMAppService.mainApp · start at login</text>
+  <text class="t" x="798" y="776">restore last mix, never mute before ready</text>
+
+  <!-- control arrows -->
+  <path class="edge" d="M 780 179 L 352 179 L 352 560 L 350 560" />
+  <text class="elabel" x="470" y="172">sets gain / EQ</text>
+  <path class="edge" d="M 780 293 L 460 293 L 460 300" />
+  <text class="elabel" x="560" y="286">persists</text>
+  <path class="edge-accent" d="M 780 407 L 420 407 L 420 320 L 352 320" />
+  <text class="elabel" x="470" y="400">authorises the tap</text>
+  <path class="edge-accent" d="M 780 523 L 400 523 L 400 640 L 352 640" />
+  <text class="elabel" x="470" y="516">un-mute on crash</text>
+  <path class="edge" d="M 780 639 L 500 639 L 500 450 L 352 450" />
+  <text class="elabel" x="560" y="632">rebuild on change</text>
+
+  <!-- legend -->
+  <rect class="node-accent" x="48" y="866" width="16" height="16" />
+  <text class="t" x="72" y="879">safety-critical: the source is muted, so this path must exist</text>
+  <rect class="node-out" x="560" y="866" width="16" height="16" />
+  <text class="t" x="584" y="879">the only audible output</text>
+</svg>
